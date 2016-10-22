@@ -1,0 +1,139 @@
+-- phpMyAdmin SQL Dump
+-- version 3.5.8.2
+-- http://www.phpmyadmin.net
+--
+-- Host: sql304.skyf.ir
+-- Generation Time: Oct 05, 2016 at 11:38 AM
+-- Server version: 5.6.31-77.0
+-- PHP Version: 5.3.3
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `skyf5_16915276_cshop1`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `charge_password`
+--
+
+CREATE TABLE IF NOT EXISTS `charge_password` (
+  `charge_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `charge_password` varchar(20) NOT NULL,
+  `charge_amount` int(10) NOT NULL,
+  `trackingcode` varchar(15) NOT NULL,
+  `date_time` bigint(20) unsigned NOT NULL,
+  `is_sold` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`charge_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
+
+--
+-- Dumping data for table `charge_password`
+--
+
+INSERT INTO `charge_password` (`charge_id`, `charge_password`, `charge_amount`, `trackingcode`, `date_time`, `is_sold`) VALUES
+(1, '4356758980089080', 10000, '5625243145', 1445809973, 1),
+(2, '2148072329780556', 20000, '4523453454', 1448315573, 1),
+(3, '1344324445532454', 10000, '2345234555', 1445809973, 1),
+(4, '9743765417364137', 20000, '1349341693', 1448315573, 1),
+(5, '9832352868340544', 10000, '3198346136', 1445809973, 1),
+(6, '0078642452410844', 20000, '7917003353', 1448315573, 1),
+(7, '9123423436346313', 50000, '8634123412', 1448315573, 1),
+(8, '6341732654173635', 200000, '8768033339', 1448315573, 0),
+(9, '5232342452345508', 50000, '7156135634', 1448315573, 1),
+(10, '0334623889433674', 200000, '2343933339', 1448315573, 0),
+(11, '7534576681288844', 100000, '7158462523', 1448315573, 0),
+(12, '0334623433555104', 1000000, '2303943423', 1448315573, 0),
+(13, '3413513887057853', 500000, '9873034112', 1448315573, 0),
+(14, '1234303437433234', 500000, '9273432340', 1448315573, 0),
+(15, '9234513647463413', 100000, '8762341634', 1448315573, 0),
+(16, '4159348613756231', 50000, '9343435760', 1448315573, 0),
+(17, '0233454746341339', 10000, '9831235432', 1445809973, 1),
+(18, '4159762346834231', 500000, '9342345601', 1448315573, 0),
+(19, '7813514654055907', 10000, '9804305734', 1445809973, 0),
+(20, '0013456976067853', 200000, '2334656856', 1448315573, 0),
+(23, '3435656575907853', 50000, '5235236709', 1448315573, 0),
+(24, '5778073297804566', 50000, '2352675789', 1448315573, 0),
+(25, '2564845234324546', 20000, '2425452345', 1448315573, 0),
+(26, '9061234534653463', 40000, '8778852345', 1448315573, 0),
+(27, '2547844000432454', 50000, '5704452345', 1448315573, 0),
+(28, '5478440003453435', 40000, '3453646346', 1448315573, 0),
+(29, '2564005675324546', 30000, '10506974545', 1448315573, 0),
+(30, '24557454552343245', 20000, '4679802345', 1448315573, 0),
+(31, '2656056478556734', 70000, '5654568980', 1448315573, 0),
+(32, '2577845254524546', 30000, '2400054593', 1448403187, 0),
+(33, '25647878234324546', 20000, '24565452345', 1448409334, 0),
+(34, '23423422342323', 50000, '33345678954', 1452390615, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `charge_sold`
+--
+
+CREATE TABLE IF NOT EXISTS `charge_sold` (
+  `sale_id` int(11) NOT NULL AUTO_INCREMENT,
+  `amount` int(11) NOT NULL,
+  `date_time` bigint(20) unsigned NOT NULL,
+  `trans_id` varchar(20) NOT NULL,
+  `id_get` varchar(20) NOT NULL,
+  `charge_id` int(11) unsigned NOT NULL,
+  `user_id` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`sale_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `charge_sold`
+--
+
+INSERT INTO `charge_sold` (`sale_id`, `amount`, `date_time`, `trans_id`, `id_get`, `charge_id`, `user_id`) VALUES
+(1, 100000, 1445453434, '1314', '25454', 21, 1),
+(2, 200000, 1445453434, '134145', '123535', 22, 2),
+(6, 20000, 1448403064, '463733', '93825', 2, 8),
+(7, 10000, 1448409483, '404345', '93829', 1, 8),
+(8, 20000, 1448410884, '349647', '93830', 4, 8),
+(9, 20000, 1448410884, '349647', '93830', 6, 8),
+(10, 10000, 1451236572, '257962', '98985', 3, 8),
+(11, 10000, 1451240292, '370010', '98994', 5, 9),
+(12, 50000, 1452390416, '265931', '101333', 7, 10),
+(13, 50000, 1455471084, '246675', '109621', 9, 9),
+(14, 10000, 1455522025, '404563', '109702', 17, 12);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_email` varchar(255) NOT NULL,
+  `user_mobile` varchar(16) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `user_email`, `user_mobile`) VALUES
+(8, 'mehdihajatpour0098@gmail.com', '09165043171'),
+(9, 'behvar20@gmail.com', '09167778888'),
+(10, 'ddd@dss.sss', '09123452134'),
+(11, 'parsakami29@yahoo.com', '09168904600'),
+(12, 'mojtaba@gmail.com', '09169949894'),
+(13, 'omid.shala@gmail.com', '09375557765'),
+(14, 'mehhdi.774@mail.org', '09306655444');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
